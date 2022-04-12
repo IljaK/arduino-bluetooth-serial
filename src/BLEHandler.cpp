@@ -1,4 +1,4 @@
-#if ESP32
+#if defined(ESP32)
 #include <string.h>
 #include "BLEHandler.h"
 

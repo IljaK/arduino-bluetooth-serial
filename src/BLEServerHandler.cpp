@@ -17,6 +17,11 @@ void BLEServerHandler::Start(const char *deviceName)
     BLEDevice::init(deviceName);
     //BLEDevice::setEncryptionLevel(ESP_BLE_SEC_ENCRYPT);
     BLEDevice::setSecurityCallbacks(this);
+    if (pSecurity == NULL) {
+        pSecurity = new BLESecurity();
+    }
+    uint32_t passkey = 0;
+    pSecurity->setStaticPIN(passkey);
 
     // Create the BLE Server
     if (pServer == NULL) {

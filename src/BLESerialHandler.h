@@ -33,6 +33,8 @@ private:
     void FlushRxData();
 
 protected:
+    BLESecurity* pSecurity = NULL;
+
     void onDisconnect(BLEServer* pServer) override;
 
     // BLECharacteristicCallbacks

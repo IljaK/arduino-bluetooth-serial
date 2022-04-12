@@ -169,14 +169,14 @@ void BLESerialHandler::SendSerialMessage()
 
     if (!isTransferrig && serialTXBuffer.Size() > 0) {
 
-        Serial.print("SendSerialMessage core: ");
-        Serial.print(xPortGetCoreID());
+        //Serial.print("SendSerialMessage core: ");
+        //Serial.print(xPortGetCoreID());
         ByteArray * item = serialTXBuffer.UnshiftFirst();
 
         if (item != NULL) {
 
-            Serial.print(" length: ");
-            Serial.println(item->length);
+            //Serial.print(" length: ");
+            //Serial.println(item->length);
 
             isTransferrig = true;
             uartTXCharacteristics->setValue(item->array, item->length);
